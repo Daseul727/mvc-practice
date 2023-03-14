@@ -1,0 +1,33 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    //tomcat embed를 위해
+    implementation('org.apache.tomcat.embed:tomcat-embed-core:8.5.45')
+    implementation('org.apache.tomcat.embed:tomcat-embed-jasper:8.5.45')
+
+    //servlet 사용을 위해
+    implementation('javax.servlet:servlet-api:4.0.1')
+
+    //jstl 사용을위해
+    implementation('javax.servlet:jstl:1.2')
+
+    //log 사용을 위해
+    implementation('ch.qos.logback:logback-classic:1.2.3')
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
